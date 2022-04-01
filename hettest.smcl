@@ -1,0 +1,74 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\GIUSEPPE\Desktop\hettest.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}20 Oct 2021, 23:10:09
+
+{com}.  reg ShortRatio Volume MarketCap Insiders Institutions
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       204
+{txt}{hline 13}{c +}{hline 34}   F(4, 199)       = {res}     4.10
+{txt}       Model {c |} {res} 299.523955         4  74.8809889   {txt}Prob > F        ={res}    0.0032
+{txt}    Residual {c |} {res} 3630.91561       199  18.2458071   {txt}R-squared       ={res}    0.0762
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0576
+{txt}       Total {c |} {res} 3930.43957       203  19.3617713   {txt}Root MSE        =   {res} 4.2715
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}  ShortRatio{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}Volume {c |}{col 14}{res}{space 2}-4.40e-08{col 26}{space 2} 6.84e-08{col 37}{space 1}   -0.64{col 46}{space 3}0.520{col 54}{space 4}-1.79e-07{col 67}{space 3} 9.08e-08
+{txt}{space 3}MarketCap {c |}{col 14}{res}{space 2}-1.17e-12{col 26}{space 2} 1.56e-12{col 37}{space 1}   -0.75{col 46}{space 3}0.456{col 54}{space 4}-4.24e-12{col 67}{space 3} 1.91e-12
+{txt}{space 4}Insiders {c |}{col 14}{res}{space 2} 6.728456{col 26}{space 2} 3.445605{col 37}{space 1}    1.95{col 46}{space 3}0.052{col 54}{space 4}-.0661268{col 67}{space 3} 13.52304
+{txt}Institutions {c |}{col 14}{res}{space 2} 6.376636{col 26}{space 2} 2.236244{col 37}{space 1}    2.85{col 46}{space 3}0.005{col 54}{space 4} 1.966859{col 67}{space 3} 10.78641
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.2284792{col 26}{space 2} 2.086143{col 37}{space 1}   -0.11{col 46}{space 3}0.913{col 54}{space 4}-4.342262{col 67}{space 3} 3.885303
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. estat hettest Volume
+
+{txt}Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+{p 9 20}Variables: Volume
+
+{col 10}chi2({res}1{txt}){col 23}={res}     4.94
+{txt}{col 10}Prob > chi2{col 23}={res}   0.0263
+
+{com}. 
+. 
+. estat hettest Insiders
+
+{txt}Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+{p 9 20}Variables: Insiders
+
+{col 10}chi2({res}1{txt}){col 23}={res}     0.45
+{txt}{col 10}Prob > chi2{col 23}={res}   0.5009
+
+{com}. estat hettest Institutions
+
+{txt}Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+{p 9 20}Variables: Institutions
+
+{col 10}chi2({res}1{txt}){col 23}={res}     2.42
+{txt}{col 10}Prob > chi2{col 23}={res}   0.1199
+
+{com}.  estat hettest MarketCap
+
+{txt}Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+{p 9 20}Variables: MarketCap
+
+{col 10}chi2({res}1{txt}){col 23}={res}     2.50
+{txt}{col 10}Prob > chi2{col 23}={res}   0.1136
+
+{com}.  *IL VOLUME, AVENDO UN VALORE MINORE DI 0.05 ---> POTREBBE ESSERE LA CAUSA DELL'ETEROSCHEDASTICITA'?
+
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\GIUSEPPE\Desktop\hettest.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}20 Oct 2021, 23:11:12
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
